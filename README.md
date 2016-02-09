@@ -38,3 +38,31 @@ location ~ \.mp4$ {
         limit_rate 200k;
 }
 ```
+
+### JWPlayer Test.html
+```html
+<html>
+<head>
+<script type="text/javascript" src="/jwplayer.js"></script>
+</head>
+<body>
+<div id='my-video'></div>
+<script type='text/javascript'>
+ jwplayer('my-video').setup({
+ file: 'files/1.mp4',
+ width: '480',
+ height: '270',
+ stretching:'fill',
+ streamer:'start',
+ provider:'http',
+ modes:[
+ {type:"html5"},
+ {type:"flash",src:"player.swf"},
+ {type:"download"}
+ ]
+});
+</script>
+</body>
+</html>
+```
+
